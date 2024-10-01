@@ -1,0 +1,145 @@
+{% extends 'temp/user_home.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Center the form container */
+        form {
+            background-color: #fff;
+            padding: 30px;
+            max-width: 500px;
+            margin: 40px auto;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Style the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Style the table cells */
+        td {
+            padding: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Style the labels and input fields */
+        input[type="text"],
+        input[type="password"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border-color 0.3s;
+        }
+
+        /* Add focus effect to input fields */
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="file"]:focus {
+            border-color: #4CAF50;
+        }
+
+        /* Style the submit button */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Center the submit button */
+        td[colspan="2"] {
+            text-align: center;
+        }
+
+        /* Add some space at the top */
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Update Profile</h1>
+<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>User Name</td>
+      <td><input type="text" name="textfield" id="textfield" value="{{ a.user_name }}" /></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><input type="text" name="textfield2" id="textfield2" value="{{ a.place }}" /></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td><input type="text" name="textfield3" id="textfield3" value="{{ a.post }}" /></td>
+    </tr>
+    <tr>
+      <td>Pin</td>
+      <td><input type="text" name="textfield4" id="textfield4" value="{{ a.pin }}" /></td>
+    </tr>
+    <tr>
+      <td>House Number</td>
+      <td><input type="text" name="textfield5" id="textfield5" value="{{ a.house_number }}" /></td>
+    </tr>
+    <tr>
+      <td>Resident</td>
+      <td><input type="text" name="textfield6" id="textfield6" value="{{ a.resident }}" /></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><input type="text" name="textfield7" id="textfield7" value="{{ a.email }}" /></td>
+    </tr>
+    <tr>
+      <td>Phone No</td>
+      <td><input type="text" name="textfield8" id="textfield8" value="{{ a.phone_number }}" /></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><input type="file" name="fileField" id="fileField" /></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td><input type="password" name="textfield10" id="textfield10" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" name="button" id="button" value="Update" /></td>
+    </tr>
+  </table>
+</form>
+
+</body>
+</html>
+{% endblock %}
